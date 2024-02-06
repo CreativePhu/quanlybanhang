@@ -16,6 +16,9 @@
 		<mapping class="vn.thienphu.quanlybanhang.model.Quyen"/>
 		<mapping class="vn.thienphu.quanlybanhang.model.TaiKhoan"/>
 		<mapping class="vn.thienphu.quanlybanhang.model.NhanVien"/>
+		<mapping class="vn.thienphu.quanlybanhang.model.LoaiSanPham"/>
+		<mapping class="vn.thienphu.quanlybanhang.model.SanPham"/>
+		<mapping class="vn.thienphu.quanlybanhang.model.Anh"/>
 		
 	</session-factory>
 </hibernate-configuration>
