@@ -1,5 +1,8 @@
 package vn.thienphu.quanlybanhang.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -7,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -31,6 +35,9 @@ public class NhanVien {
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ten_tai_khoan")
 	private TaiKhoan taiKhoan;
+	
+	@OneToMany(mappedBy = "nhanVien" ,cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+	private List<PhieuMuaHang> danhSachPhieuMuaHang;
 	
 	public NhanVien() {
 		
@@ -80,6 +87,22 @@ public class NhanVien {
 
 	public void setTaiKhoan(TaiKhoan taiKhoan) {
 		this.taiKhoan = taiKhoan;
+	}
+
+	public List<PhieuMuaHang> getDanhSachPhieuMuaHang() {
+		return danhSachPhieuMuaHang;
+	}
+
+	public void setDanhSachPhieuMuaHang(List<PhieuMuaHang> danhSachPhieuMuaHang) {
+		this.danhSachPhieuMuaHang = danhSachPhieuMuaHang;
+	}
+	
+	public void themPhieuMuaHang(PhieuMuaHang phieuMuaHang) {
+		if(danhSachPhieuMuaHang == null) {
+			danhSachPhieuMuaHang = new ArrayList<PhieuMuaHang>();
+		}
+		
+		danhSachPhieuMuaHang.add(phieuMuaHang);
 	}
 
 	@Override

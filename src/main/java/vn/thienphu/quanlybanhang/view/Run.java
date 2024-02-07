@@ -35,13 +35,13 @@ public class Run {
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Session session = sessionFactory.openSession();
 		session.beginTransaction();
-		LoaiSanPham loaiSanPham = new LoaiSanPham("Bàn ghế");
-		SanPham sanPham = new SanPham("Bàn gỗ", 120000);
-		sanPham.addLoaiSanPham(loaiSanPham);
-		String image = convertImageToBase64("C:\\Users\\Acer\\OneDrive\\Hình ảnh\\Saved Pictures\\188A1388.jpg");
-		Anh anh = new Anh(image);
-		sanPham.setAnh(anh);
-		session.persist(sanPham);
+//		LoaiSanPham loaiSanPham = new LoaiSanPham("Bàn ghế");
+//		SanPham sanPham = new SanPham("Bàn gỗ", 120000);
+//		sanPham.addLoaiSanPham(loaiSanPham);
+//		String image = convertImageToBase64("C:\\Users\\Acer\\OneDrive\\Hình ảnh\\Saved Pictures\\188A1388.jpg");
+//		Anh anh = new Anh(image);
+//		sanPham.setAnh(anh);
+//		session.persist(sanPham);
 		session.getTransaction().commit();
 		session.close();
 	}
