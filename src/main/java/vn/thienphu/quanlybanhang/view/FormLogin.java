@@ -13,7 +13,7 @@ import java.awt.Color;
 import javax.swing.JButton;
 import javax.swing.ImageIcon;
 
-public class formLogin extends JFrame {
+public class FormLogin extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -27,7 +27,7 @@ public class formLogin extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					formLogin frame = new formLogin();
+					FormLogin frame = new FormLogin();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -39,7 +39,7 @@ public class formLogin extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public formLogin() {
+	public FormLogin() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 816, 531);
 		setLocationRelativeTo(null);
@@ -58,7 +58,7 @@ public class formLogin extends JFrame {
 		JLabel lblNewLabel_2 = new JLabel("");
 		lblNewLabel_2.setBounds(126, 78, 128, 137);
 		panelLeft.add(lblNewLabel_2);
-		lblNewLabel_2.setIcon(new ImageIcon(formLogin.class.getResource("/vn/thienphu/quanlybanhang/view/images/cart-remove-icon.png")));
+		lblNewLabel_2.setIcon(new ImageIcon(FormLogin.class.getResource("/vn/thienphu/quanlybanhang/view/images/cart-remove-icon.png")));
 		
 		JLabel lblNewLabel_3 = new JLabel("<html><div style='text-align: center;'>Thanh Toán Mua Sắm<br>Mọi Lúc Mọi Nơi</div></html>");
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));

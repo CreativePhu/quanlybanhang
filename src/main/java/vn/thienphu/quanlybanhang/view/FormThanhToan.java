@@ -6,14 +6,14 @@ import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-public class formQuanTri extends JPanel {
+public class FormThanhToan extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Create the panel.
 	 */
-	public formQuanTri() {
+	public FormThanhToan() {
 		setSize(1131, 753);
 		setLayout(null);
 
@@ -23,9 +23,9 @@ public class formQuanTri extends JPanel {
 		add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("QUẢN TRỊ");
+		JLabel lblNewLabel = new JLabel("THANH TOÁN");
 		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
-		lblNewLabel.setBounds(498, 277, 174, 119);
+		lblNewLabel.setBounds(498, 277, 256, 119);
 		panel.add(lblNewLabel);
 	}
 
