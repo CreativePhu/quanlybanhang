@@ -26,6 +26,9 @@ public class Anh {
 
 	@OneToOne(mappedBy = "anh", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	private SanPham sanPham;
+	
+	@OneToOne(mappedBy = "anh", cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
+	private NhanVien nhanVien;
 
 	public Anh() {
 
@@ -57,6 +60,14 @@ public class Anh {
 
 	public void setSanPham(SanPham sanPham) {
 		this.sanPham = sanPham;
+	}
+
+	public NhanVien getNhanVien() {
+		return nhanVien;
+	}
+
+	public void setNhanVien(NhanVien nhanVien) {
+		this.nhanVien = nhanVien;
 	}
 
 	@Override

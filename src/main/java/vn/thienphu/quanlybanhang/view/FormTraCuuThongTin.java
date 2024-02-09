@@ -5,10 +5,14 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 
 public class FormTraCuuThongTin extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private FormTraCuuNhanVien formTraCuuNhanVien = new FormTraCuuNhanVien();
+	private FormTraCuuSanPham formTraCuuSanPham = new FormTraCuuSanPham();
+	private FormTraCuuHoaDon formTraCuuHoaDon = new FormTraCuuHoaDon();
 
 	/**
 	 * Create the panel.
@@ -18,15 +22,17 @@ public class FormTraCuuThongTin extends JPanel {
 		setLayout(null);
 
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(218, 112, 214));
+		panel.setBackground(new Color(123, 104, 238));
 		panel.setBounds(0, 0, 1131, 753);
 		add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("TRA CỨU THÔNG TIN");
-		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
-		lblNewLabel.setBounds(435, 274, 331, 119);
-		panel.add(lblNewLabel);
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBounds(0, 0, 1131, 753);
+		tabbedPane.addTab("Tra Cứu Nhân Viên", formTraCuuNhanVien);
+		tabbedPane.addTab("Tra Cứu Sản Phẩm", formTraCuuSanPham);
+		tabbedPane.addTab("Tra Cứu Hóa Đơn", formTraCuuHoaDon);
+		panel.add(tabbedPane);
+		
 	}
-
 }

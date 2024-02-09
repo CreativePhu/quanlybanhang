@@ -31,10 +31,20 @@ public class NhanVien {
 	
 	@Column(name = "gmail")
 	private String gmail;
+	
+	@Column(name = "dia_chi")
+	private String diaChi;
+	
+	@Column(name = "gioi_tinh")
+	private boolean gioiTinh;
 		
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ten_tai_khoan")
 	private TaiKhoan taiKhoan;
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "id_anh")
+	private Anh anh;
 	
 	@OneToMany(mappedBy = "nhanVien" ,cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	private List<PhieuMuaHang> danhSachPhieuMuaHang;
@@ -81,6 +91,22 @@ public class NhanVien {
 		this.gmail = gmail;
 	}
 
+	public String getDiaChi() {
+		return diaChi;
+	}
+
+	public void setDiaChi(String diaChi) {
+		this.diaChi = diaChi;
+	}
+
+	public boolean isGioiTinh() {
+		return gioiTinh;
+	}
+
+	public void setGioiTinh(boolean gioiTinh) {
+		this.gioiTinh = gioiTinh;
+	}
+
 	public TaiKhoan getTaiKhoan() {
 		return taiKhoan;
 	}
@@ -103,6 +129,14 @@ public class NhanVien {
 		}
 		
 		danhSachPhieuMuaHang.add(phieuMuaHang);
+	}
+
+	public Anh getAnh() {
+		return anh;
+	}
+
+	public void setAnh(Anh anh) {
+		this.anh = anh;
 	}
 
 	@Override

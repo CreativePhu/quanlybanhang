@@ -47,6 +47,7 @@ public class FormIndex extends JFrame {
 	public JLabel lblMenuThanhToanHoaDon;
 	public JLabel lblCloclk;
 	private JSeparator separator;
+	private JPanel panel;
 
 	/**
 	 * Launch the application.
@@ -78,6 +79,15 @@ public class FormIndex extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		panel = new JPanel();
+		panel.setBackground(new Color(123, 104, 238));
+		panel.setBounds(265, 0, 1131, 52);
+		contentPane.add(panel);
+		
+				lblCloclk = new JLabel("00:00:00");
+				panel.add(lblCloclk);
+				lblCloclk.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
 
 		JPanel menu = new JPanel();
 		menu.setBackground(new Color(123, 104, 238));
@@ -171,17 +181,12 @@ public class FormIndex extends JFrame {
 
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setBackground(new Color(255, 255, 255));
-		tabbedPane.setBounds(265, 40, 1131, 713);
+		tabbedPane.setBounds(265, 23, 1131, 730);
 		tabbedPane.addTab("Trang Chủ", null, trangChu, null);
 		tabbedPane.addTab("Tra Cứu Thông Tin", null, traCuuThongTin, null);
 		tabbedPane.addTab("Quản Trị", null, quanTri, null);
-		tabbedPane.addTab("Thanh Toán", null, thanhToan, null);
+		tabbedPane.addTab("Thanh Toán Hóa Đơn", null, thanhToan, null);
 		contentPane.add(tabbedPane);
-
-		lblCloclk = new JLabel("00:00:00");
-		lblCloclk.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
-		lblCloclk.setBounds(1261, 31, 135, 29);
-		contentPane.add(lblCloclk);
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
