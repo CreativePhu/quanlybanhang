@@ -65,7 +65,9 @@ public class FormIndex extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1412, 792);
 		setLocationRelativeTo(null);
+		setResizable(false);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(123, 104, 238));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -156,7 +158,8 @@ public class FormIndex extends JFrame {
 		panel_6.add(lblNewLabel_7);
 		
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
-		tabbedPane.setBounds(265, -24, 1131, 777);
+		tabbedPane.setBackground(new Color(255, 255, 255));
+		tabbedPane.setBounds(265, 21, 1131, 732);
 		tabbedPane.addTab("Trang Chủ", null, trangChu, null);
 		tabbedPane.addTab("Tra Cứu Thông Tin", null, traCuuThongTin, null);
 		tabbedPane.addTab("Quản Trị", null, quanTri, null);
