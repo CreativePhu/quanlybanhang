@@ -26,9 +26,7 @@ public class FormTrangChu extends JPanel {
 	 * Create the panel.
 	 */
 	public FormTrangChu() {
-		setSize(1131, 753);
 		setLayout(null);
-
 		panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
 		panel.setBounds(0, 0, 1131, 753);
