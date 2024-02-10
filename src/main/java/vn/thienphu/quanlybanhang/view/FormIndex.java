@@ -6,7 +6,7 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import vn.thienphu.quanlybanhang.controller.MouseController;
+import vn.thienphu.quanlybanhang.controller.MouseControllerFormIndex;
 
 import java.awt.Color;
 import javax.swing.JLabel;
@@ -32,7 +32,7 @@ public class FormIndex extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	public JTabbedPane tabbedPane;
-	private MouseController mouseController = new MouseController(this);
+	private MouseControllerFormIndex mouseControllerFormIndex = new MouseControllerFormIndex(this);
 	private FormTrangChu trangChu = new FormTrangChu();
 	private FormQuanTri quanTri = new FormQuanTri();
 	private FormThanhToan thanhToan = new FormThanhToan();
@@ -110,7 +110,7 @@ public class FormIndex extends JFrame {
 		panel_btnTrangChu = new JPanel();
 		panel_btnTrangChu.setBackground(new Color(255, 165, 0));
 		panel_btnTrangChu.setBounds(0, 234, 267, 52);
-		panel_btnTrangChu.addMouseListener(mouseController);
+		panel_btnTrangChu.addMouseListener(mouseControllerFormIndex);
 		menu.add(panel_btnTrangChu);
 		panel_btnTrangChu.setLayout(null);
 
@@ -123,7 +123,7 @@ public class FormIndex extends JFrame {
 		panel_btn_traCuuThongTin = new JPanel();
 		panel_btn_traCuuThongTin.setLayout(null);
 		panel_btn_traCuuThongTin.setBounds(0, 297, 267, 52);
-		panel_btn_traCuuThongTin.addMouseListener(mouseController);
+		panel_btn_traCuuThongTin.addMouseListener(mouseControllerFormIndex);
 		menu.add(panel_btn_traCuuThongTin);
 
 		lblMenuTraCuuThongTin = new JLabel("Tra Cứu Thông Tin");
@@ -134,7 +134,7 @@ public class FormIndex extends JFrame {
 		panel_btnQuanTri = new JPanel();
 		panel_btnQuanTri.setLayout(null);
 		panel_btnQuanTri.setBounds(0, 360, 267, 52);
-		panel_btnQuanTri.addMouseListener(mouseController);
+		panel_btnQuanTri.addMouseListener(mouseControllerFormIndex);
 		menu.add(panel_btnQuanTri);
 
 		lblMenuQuanTri = new JLabel("Quản Trị");
@@ -145,7 +145,7 @@ public class FormIndex extends JFrame {
 		panel_btnThanhToanHoaDon = new JPanel();
 		panel_btnThanhToanHoaDon.setLayout(null);
 		panel_btnThanhToanHoaDon.setBounds(0, 423, 267, 52);
-		panel_btnThanhToanHoaDon.addMouseListener(mouseController);
+		panel_btnThanhToanHoaDon.addMouseListener(mouseControllerFormIndex);
 		menu.add(panel_btnThanhToanHoaDon);
 
 		lblMenuThanhToanHoaDon = new JLabel("Thanh Toán Hóa Đơn");
@@ -194,14 +194,10 @@ public class FormIndex extends JFrame {
                 Calendar calendar = Calendar.getInstance(timeZone);
                 long currentTime = System.currentTimeMillis();
                 calendar.setTimeInMillis(currentTime);
-
-                // Định dạng thời gian sang dạng chuỗi HH:mm:ss
                 String timeString = String.format("%02d:%02d:%02d",
                         calendar.get(Calendar.HOUR_OF_DAY),
                         calendar.get(Calendar.MINUTE),
                         calendar.get(Calendar.SECOND));
-
-                // Cập nhật nhãn đồng hồ với thời gian mới
                 lblCloclk.setText(timeString);
             }
         });

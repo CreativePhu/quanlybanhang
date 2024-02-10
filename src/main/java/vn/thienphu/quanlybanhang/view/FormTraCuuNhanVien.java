@@ -67,6 +67,7 @@ public class FormTraCuuNhanVien extends JPanel {
 		add(lblLoiSnPhm_1);
 		
 		JComboBox comboBox = new JComboBox();
+		comboBox.setEditable(true);
 		comboBox.setFont(new Font("Arial", Font.PLAIN, 14));
 		comboBox.setBounds(177, 469, 214, 38);
 		add(comboBox);
@@ -118,7 +119,6 @@ public class FormTraCuuNhanVien extends JPanel {
 		
 		textField_2 = new JTextField();
 		textField_2.setFont(new Font("Arial", Font.PLAIN, 14));
-		textField_2.setEditable(false);
 		textField_2.setColumns(10);
 		textField_2.setBounds(177, 515, 214, 38);
 		add(textField_2);

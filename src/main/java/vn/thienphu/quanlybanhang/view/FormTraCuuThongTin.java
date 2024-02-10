@@ -7,12 +7,15 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
+import vn.thienphu.quanlybanhang.controller.MouseControllerFormIndex;
+
 public class FormTraCuuThongTin extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private FormTraCuuNhanVien formTraCuuNhanVien = new FormTraCuuNhanVien();
 	private FormTraCuuSanPham formTraCuuSanPham = new FormTraCuuSanPham();
 	private FormTraCuuHoaDon formTraCuuHoaDon = new FormTraCuuHoaDon();
+	private MouseControllerFormIndex mouseControllerFormIndex;
 
 	/**
 	 * Create the panel.

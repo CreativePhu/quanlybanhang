@@ -7,11 +7,11 @@ import java.text.Normalizer.Form;
 
 import vn.thienphu.quanlybanhang.view.FormIndex;
 
-public class MouseController implements MouseListener{
+public class MouseControllerFormIndex implements MouseListener{
 	
 	private FormIndex formIndex;
 
-	public MouseController(FormIndex formIndex) {
+	public MouseControllerFormIndex(FormIndex formIndex) {
 		this.formIndex = formIndex;
 	}
 
@@ -72,7 +72,7 @@ public class MouseController implements MouseListener{
 
 	@Override
 	public void mousePressed(MouseEvent e) {
-		// TODO Auto-generated method stub
+		
 		
 	}
 
