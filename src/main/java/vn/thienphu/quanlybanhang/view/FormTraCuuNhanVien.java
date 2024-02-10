@@ -4,21 +4,22 @@ import javax.swing.JPanel;
 import javax.swing.JLabel;
 import java.awt.Font;
 import javax.swing.JTextField;
-import javax.swing.JButton;
+import javax.swing.JComboBox;
 import javax.swing.JScrollPane;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
-import javax.swing.table.DefaultTableModel;
+import java.awt.GridLayout;
+import java.awt.FlowLayout;
 import java.awt.Color;
-import java.awt.Dimension;
-
-import javax.swing.border.BevelBorder;
-import javax.swing.border.EmptyBorder;
+import javax.swing.JButton;
+import javax.swing.border.LineBorder;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class FormTraCuuNhanVien extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_2;
 	private JTable table;
 
 	/**
@@ -28,33 +29,47 @@ public class FormTraCuuNhanVien extends JPanel {
 		setSize(1131, 700);
 		setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("TRA CỨU NHÂN VIÊN");
-		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 28));
-		lblNewLabel.setBounds(405, 11, 313, 55);
+		JLabel lblTraCuSn = new JLabel("TRA CỨU NHÂN VIÊN");
+		lblTraCuSn.setFont(new Font("Segoe UI Black", Font.PLAIN, 28));
+		lblTraCuSn.setBounds(412, 11, 313, 55);
+		add(lblTraCuSn);
+		
+		JLabel lblNewLabel = new JLabel("ID Nhân Viên");
+		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
+		lblNewLabel.setBounds(39, 368, 112, 38);
 		add(lblNewLabel);
 		
-		JLabel lblTmKim = new JLabel("Tìm kiếm");
-		lblTmKim.setFont(new Font("Segoe UI Black", Font.PLAIN, 24));
-		lblTmKim.setBounds(58, 77, 123, 55);
-		add(lblTmKim);
+		JLabel lblTnSnPhm = new JLabel("Họ Và Tên");
+		lblTnSnPhm.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
+		lblTnSnPhm.setBounds(63, 417, 88, 38);
+		add(lblTnSnPhm);
 		
 		textField = new JTextField();
-		textField.setFont(new Font("Segoe UI Emoji", Font.PLAIN, 18));
-		textField.setBounds(195, 83, 523, 43);
+		textField.setFont(new Font("Arial", Font.PLAIN, 14));
+		textField.setBounds(177, 371, 214, 38);
 		add(textField);
 		textField.setColumns(10);
 		
-		JButton btnNewButton = new JButton("Kết quả");
-		btnNewButton.setBackground(new Color(255, 255, 255));
-		btnNewButton.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		btnNewButton.setBounds(743, 82, 135, 44);
-		add(btnNewButton);
+		textField_1 = new JTextField();
+		textField_1.setFont(new Font("Arial", Font.PLAIN, 14));
+		textField_1.setColumns(10);
+		textField_1.setBounds(177, 420, 214, 38);
+		add(textField_1);
 		
-		JLabel lblDanhSchNhn = new JLabel("Danh sách nhân viên");
-		lblDanhSchNhn.setFont(new Font("Segoe UI Black", Font.PLAIN, 18));
-		lblDanhSchNhn.setBounds(58, 143, 190, 43);
-		add(lblDanhSchNhn);
+		JLabel lblLoiSnPhm = new JLabel("Giới Tính");
+		lblLoiSnPhm.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
+		lblLoiSnPhm.setBounds(73, 466, 78, 38);
+		add(lblLoiSnPhm);
 		
+		JLabel lblLoiSnPhm_1 = new JLabel("Số Điện Thoại");
+		lblLoiSnPhm_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
+		lblLoiSnPhm_1.setBounds(39, 515, 112, 38);
+		add(lblLoiSnPhm_1);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setFont(new Font("Arial", Font.PLAIN, 14));
+		comboBox.setBounds(177, 469, 214, 38);
+		add(comboBox);
 		
 		table = new JTable();
 		table.setRowHeight(25);
@@ -63,18 +78,50 @@ public class FormTraCuuNhanVien extends JPanel {
 		table.setForeground(new Color(0, 0, 0));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null},
+				{null, null, null, null},
 			},
 			new String[] {
-				"ID Nhân Viên", "Họ Và Tên", "Giới Tính", "Số Điện Thoại", "Chi Tiết"
+				"ID Nhân Viên", "Họ Và Tên", "Giới Tính", "Số Điện Thoại"
 			}
 		));
 		
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setViewportBorder(new EmptyBorder(0, 0, 0, 0));
-		scrollPane.setBounds(58, 197, 1018, 464);
+		scrollPane.setBounds(412, 79, 709, 593);
 		add(scrollPane);
 		
+		
+		JLabel lblThngTinSn = new JLabel("Thông Tin Nhân Viên");
+		lblThngTinSn.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
+		lblThngTinSn.setBounds(97, 79, 215, 38);
+		add(lblThngTinSn);
+		
+		JButton btnTmKim = new JButton("Tìm kiếm");
+		btnTmKim.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
+		btnTmKim.setBackground(Color.WHITE);
+		btnTmKim.setBounds(177, 564, 135, 44);
+		add(btnTmKim);
+		
+		JLabel lblnh = new JLabel("Ảnh");
+		lblnh.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
+		lblnh.setBounds(110, 327, 41, 30);
+		add(lblnh);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel.setBounds(177, 128, 214, 227);
+		add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(0, 2, 214, 227);
+		panel.add(lblNewLabel_1);
+		
+		textField_2 = new JTextField();
+		textField_2.setFont(new Font("Arial", Font.PLAIN, 14));
+		textField_2.setEditable(false);
+		textField_2.setColumns(10);
+		textField_2.setBounds(177, 515, 214, 38);
+		add(textField_2);
 		
 	}
 }
