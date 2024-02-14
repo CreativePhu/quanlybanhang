@@ -21,6 +21,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.Timer;
+import javax.swing.UIManager;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
@@ -56,6 +57,8 @@ public class FormIndex extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+//					cấu hình giao diện look and feel của window
+					UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 					FormIndex frame = new FormIndex();
 					frame.setVisible(true);
 				} catch (Exception e) {
@@ -180,6 +183,7 @@ public class FormIndex extends JFrame {
 		menu.add(separator);
 
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setEnabled(false);
 		tabbedPane.setBackground(new Color(255, 255, 255));
 		tabbedPane.setBounds(265, 23, 1131, 730);
 		tabbedPane.addTab("Trang Chủ", null, trangChu, null);

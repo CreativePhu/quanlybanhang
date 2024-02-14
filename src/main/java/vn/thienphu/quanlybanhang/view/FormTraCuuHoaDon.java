@@ -18,14 +18,13 @@ import javax.swing.table.DefaultTableModel;
 
 import vn.thienphu.quanlybanhang.controller.MouseControllerFormIndex;
 import vn.thienphu.quanlybanhang.controller.MouseControllerFormTraCuuHoaDon;
+import com.toedter.calendar.JDateChooser;
 
 public class FormTraCuuHoaDon extends JPanel {
 
 	private static final long serialVersionUID = 1L;
 	private JTextField textField;
 	private JTable table;
-	private JTextField textField_1;
-	private JTextField textField_2;
 	private MouseControllerFormTraCuuHoaDon mouseControllerFormTraCuuHoaDon = new MouseControllerFormTraCuuHoaDon(this);
 	private JPopupMenu popupMenu;
 
@@ -90,17 +89,15 @@ public class FormTraCuuHoaDon extends JPanel {
 		lblTNgy.setBounds(65, 177, 76, 38);
 		add(lblTNgy);
 		
-		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Arial", Font.PLAIN, 14));
-		textField_1.setColumns(10);
-		textField_1.setBounds(166, 180, 214, 38);
-		add(textField_1);
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setDateFormatString("dd/mm/yyyy");
+		dateChooser.setBounds(166, 180, 214, 38);
+		add(dateChooser);
 		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Arial", Font.PLAIN, 14));
-		textField_2.setColumns(10);
-		textField_2.setBounds(166, 226, 214, 38);
-		add(textField_2);
+		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1.setDateFormatString("dd/mm/yyyy");
+		dateChooser_1.setBounds(166, 226, 214, 38);
+		add(dateChooser_1);
 	}
 	
 	public void showPopupMenu(MouseEvent e) {
