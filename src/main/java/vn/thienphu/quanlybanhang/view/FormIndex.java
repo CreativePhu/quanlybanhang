@@ -175,7 +175,7 @@ public class FormIndex extends JFrame {
 
 		JLabel lblNewLabel_7 = new JLabel("Đăng Xuất");
 		lblNewLabel_7.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 16));
-		lblNewLabel_7.setBounds(84, 11, 75, 19);
+		lblNewLabel_7.setBounds(84, 11, 81, 19);
 		panel_6.add(lblNewLabel_7);
 		
 		separator = new JSeparator();

@@ -31,6 +31,7 @@ public class FormTraCuuThongTin extends JPanel {
 		panel.setLayout(null);
 		
 		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		tabbedPane.setBounds(0, 0, 1131, 753);
 		tabbedPane.addTab("Tra Cứu Nhân Viên", formTraCuuNhanVien);
 		tabbedPane.addTab("Tra Cứu Sản Phẩm", formTraCuuSanPham);
