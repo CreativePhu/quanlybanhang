@@ -41,8 +41,8 @@ public class FormTraCuuHoaDon extends JPanel {
 		add(lblTraCuSn);
 
 		JLabel lblNewLabel = new JLabel("Mã Hóa Đơn");
-		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
-		lblNewLabel.setBounds(35, 128, 105, 38);
+		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
+		lblNewLabel.setBounds(51, 129, 105, 38);
 		add(lblNewLabel);
 
 		textField = new JTextField();
@@ -52,8 +52,8 @@ public class FormTraCuuHoaDon extends JPanel {
 		textField.setColumns(10);
 
 		JLabel lblLoiSnPhm = new JLabel("Đến Ngày");
-		lblLoiSnPhm.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
-		lblLoiSnPhm.setBounds(58, 226, 83, 38);
+		lblLoiSnPhm.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
+		lblLoiSnPhm.setBounds(73, 226, 83, 38);
 		add(lblLoiSnPhm);
 		
 		popupMenu = new JPopupMenu();
@@ -85,8 +85,8 @@ public class FormTraCuuHoaDon extends JPanel {
 		add(btnTmKim);
 		
 		JLabel lblTNgy = new JLabel("Từ Ngày");
-		lblTNgy.setFont(new Font("Segoe UI Black", Font.PLAIN, 16));
-		lblTNgy.setBounds(65, 177, 76, 38);
+		lblTNgy.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
+		lblTNgy.setBounds(80, 177, 76, 38);
 		add(lblTNgy);
 		
 		JDateChooser dateChooser = new JDateChooser();
