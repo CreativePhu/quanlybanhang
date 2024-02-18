@@ -5,10 +5,14 @@ import java.awt.Font;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTabbedPane;
 
 public class FormQuanTri extends JPanel {
 
 	private static final long serialVersionUID = 1L;
+	private FormQuanTriNhanVien formQuanTriNhanVien = new FormQuanTriNhanVien();
+	private FormQuanTriTaiKhoan formQuanTriTaiKhoan = new FormQuanTriTaiKhoan();
+	private FormQuanTriHoaDon formQuanTriHoaDon = new FormQuanTriHoaDon();
 
 	/**
 	 * Create the panel.
@@ -16,17 +20,21 @@ public class FormQuanTri extends JPanel {
 	public FormQuanTri() {
 		setSize(1131, 753);
 		setLayout(null);
-
+		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(218, 112, 214));
+		panel.setBackground(new Color(123, 104, 238));
 		panel.setBounds(0, 0, 1131, 753);
 		add(panel);
 		panel.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("QUẢN TRỊ");
-		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 30));
-		lblNewLabel.setBounds(498, 277, 174, 119);
-		panel.add(lblNewLabel);
+		JTabbedPane tabbedPane = new JTabbedPane(JTabbedPane.TOP);
+		tabbedPane.setBackground(new Color(255, 255, 255));
+		tabbedPane.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		tabbedPane.setBounds(0, 0, 1134, 753);
+		panel.add(tabbedPane);
+		
+		tabbedPane.addTab("Quản lý nhân viên", null, formQuanTriNhanVien, null);
+		tabbedPane.addTab("Quản lý tài khoản", null, formQuanTriTaiKhoan, null);
+		tabbedPane.addTab("Quản lý hóa đơn", null, formQuanTriHoaDon, null);
 	}
-
 }

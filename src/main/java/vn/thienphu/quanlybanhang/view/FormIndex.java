@@ -185,7 +185,7 @@ public class FormIndex extends JFrame {
 		tabbedPane = new JTabbedPane(JTabbedPane.TOP);
 		tabbedPane.setEnabled(false);
 		tabbedPane.setBackground(new Color(255, 255, 255));
-		tabbedPane.setBounds(265, 23, 1131, 730);
+		tabbedPane.setBounds(265, 23, 1134, 730);
 		tabbedPane.addTab("Trang Chủ", null, trangChu, null);
 		tabbedPane.addTab("Tra Cứu Thông Tin", null, traCuuThongTin, null);
 		tabbedPane.addTab("Quản Trị", null, quanTri, null);
