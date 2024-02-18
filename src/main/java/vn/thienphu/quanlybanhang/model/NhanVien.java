@@ -48,7 +48,7 @@ public class NhanVien {
 
 	@OneToMany(mappedBy = "nhanVien", cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
 			CascadeType.REFRESH })
-	private HoaDon hoaDon;
+	private List<HoaDon> danhSachHoaDon;
 
 	public NhanVien() {
 
@@ -124,12 +124,13 @@ public class NhanVien {
 		this.anh = anh;
 	}
 
-	public HoaDon getHoaDon() {
-		return hoaDon;
+
+	public List<HoaDon> getDanhSachHoaDon() {
+		return danhSachHoaDon;
 	}
 
-	public void setHoaDon(HoaDon hoaDon) {
-		this.hoaDon = hoaDon;
+	public void setDanhSachHoaDon(List<HoaDon> danhSachHoaDon) {
+		this.danhSachHoaDon = danhSachHoaDon;
 	}
 
 	@Override
