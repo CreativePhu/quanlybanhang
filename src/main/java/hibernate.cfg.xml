@@ -19,8 +19,6 @@
 		<mapping class="vn.thienphu.quanlybanhang.model.LoaiSanPham"/>
 		<mapping class="vn.thienphu.quanlybanhang.model.SanPham"/>
 		<mapping class="vn.thienphu.quanlybanhang.model.Anh"/>
-		<mapping class="vn.thienphu.quanlybanhang.model.PhieuMuaHang"/>
-		<mapping class="vn.thienphu.quanlybanhang.model.ChiTietPhieuMuaHang"/>
 		<mapping class="vn.thienphu.quanlybanhang.model.HoaDon"/>
 		<mapping class="vn.thienphu.quanlybanhang.model.ChiTietHoaDon"/>
 		

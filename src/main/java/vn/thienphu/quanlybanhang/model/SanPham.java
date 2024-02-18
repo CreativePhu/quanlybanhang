@@ -39,8 +39,6 @@ public class SanPham {
 	@JoinColumn(name = "id_anh")
 	private Anh anh;
 	
-	@OneToMany(mappedBy = "sanPham" ,cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
-	private List<ChiTietPhieuMuaHang> danhSachChiTietPhieuMuaHang;
 	
 	@OneToMany(mappedBy = "sanPham" ,cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH })
 	private List<ChiTietHoaDon> danhSachChiTietHoaDon;
@@ -91,21 +89,6 @@ public class SanPham {
 			danhSachLoaiSanPham = new ArrayList<LoaiSanPham>();
 		}
 		danhSachLoaiSanPham.add(loaiSanPham);
-	}
-
-	public List<ChiTietPhieuMuaHang> getDanhSachChiTietPhieuMuaHang() {
-		return danhSachChiTietPhieuMuaHang;
-	}
-
-	public void setDanhSachChiTietPhieuMuaHang(List<ChiTietPhieuMuaHang> danhSachChiTietPhieuMuaHang) {
-		this.danhSachChiTietPhieuMuaHang = danhSachChiTietPhieuMuaHang;
-	}
-	
-	public void themChiTietPhieuMuaHang(ChiTietPhieuMuaHang chiTietPhieuMuaHang) {
-		if (danhSachChiTietPhieuMuaHang == null) {
-			danhSachChiTietPhieuMuaHang = new ArrayList<ChiTietPhieuMuaHang>();
-		}
-		danhSachChiTietPhieuMuaHang.add(chiTietPhieuMuaHang);
 	}
 
 	public List<ChiTietHoaDon> getDanhSachChiTietHoaDon() {

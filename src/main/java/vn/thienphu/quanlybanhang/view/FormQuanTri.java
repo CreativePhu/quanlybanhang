@@ -13,6 +13,7 @@ public class FormQuanTri extends JPanel {
 	private FormQuanTriNhanVien formQuanTriNhanVien = new FormQuanTriNhanVien();
 	private FormQuanTriTaiKhoan formQuanTriTaiKhoan = new FormQuanTriTaiKhoan();
 	private FormQuanTriHoaDon formQuanTriHoaDon = new FormQuanTriHoaDon();
+	private FormQuanTriSanPham formQuanTriSanPham = new FormQuanTriSanPham();
 
 	/**
 	 * Create the panel.
@@ -36,5 +37,6 @@ public class FormQuanTri extends JPanel {
 		tabbedPane.addTab("Quản lý nhân viên", null, formQuanTriNhanVien, null);
 		tabbedPane.addTab("Quản lý tài khoản", null, formQuanTriTaiKhoan, null);
 		tabbedPane.addTab("Quản lý hóa đơn", null, formQuanTriHoaDon, null);
+		tabbedPane.addTab("Quản lý sản phẩm", null, formQuanTriSanPham, null);
 	}
 }

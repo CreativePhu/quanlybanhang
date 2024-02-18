@@ -17,42 +17,43 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "nhan_vien")
 public class NhanVien {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_nhan_vien")
 	private long idNhanVien;
-	
+
 	@Column(name = "ten_nhan_vien")
 	private String tenNhanVien;
-	
+
 	@Column(name = "so_dien_thoai")
 	private String soDienThoai;
-	
+
 	@Column(name = "gmail")
 	private String gmail;
-	
+
 	@Column(name = "dia_chi")
 	private String diaChi;
-	
+
 	@Column(name = "gioi_tinh")
 	private boolean gioiTinh;
-		
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ten_tai_khoan")
 	private TaiKhoan taiKhoan;
-	
+
 	@OneToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "id_anh")
 	private Anh anh;
-	
-	@OneToMany(mappedBy = "nhanVien" ,cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-	private List<PhieuMuaHang> danhSachPhieuMuaHang;
-	
+
+	@OneToMany(mappedBy = "nhanVien", cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST,
+			CascadeType.REFRESH })
+	private HoaDon hoaDon;
+
 	public NhanVien() {
-		
+
 	}
-	
+
 	public NhanVien(String tenNhanVien, String soDienThoai, String gmail) {
 		this.tenNhanVien = tenNhanVien;
 		this.soDienThoai = soDienThoai;
@@ -115,22 +116,6 @@ public class NhanVien {
 		this.taiKhoan = taiKhoan;
 	}
 
-	public List<PhieuMuaHang> getDanhSachPhieuMuaHang() {
-		return danhSachPhieuMuaHang;
-	}
-
-	public void setDanhSachPhieuMuaHang(List<PhieuMuaHang> danhSachPhieuMuaHang) {
-		this.danhSachPhieuMuaHang = danhSachPhieuMuaHang;
-	}
-	
-	public void themPhieuMuaHang(PhieuMuaHang phieuMuaHang) {
-		if(danhSachPhieuMuaHang == null) {
-			danhSachPhieuMuaHang = new ArrayList<PhieuMuaHang>();
-		}
-		
-		danhSachPhieuMuaHang.add(phieuMuaHang);
-	}
-
 	public Anh getAnh() {
 		return anh;
 	}
@@ -139,12 +124,18 @@ public class NhanVien {
 		this.anh = anh;
 	}
 
+	public HoaDon getHoaDon() {
+		return hoaDon;
+	}
+
+	public void setHoaDon(HoaDon hoaDon) {
+		this.hoaDon = hoaDon;
+	}
+
 	@Override
 	public String toString() {
 		return "NhanVien [idNhanVien=" + idNhanVien + ", tenNhanVien=" + tenNhanVien + ", soDienThoai=" + soDienThoai
 				+ ", gmail=" + gmail + ", taiKhoan=" + taiKhoan + "]";
 	}
-	
-	
-	
+
 }
