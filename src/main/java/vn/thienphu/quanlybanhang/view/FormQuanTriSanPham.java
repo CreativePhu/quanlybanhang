@@ -40,46 +40,46 @@ public class FormQuanTriSanPham  extends JPanel {
 		panel.setLayout(null);
 		
 		JLabel lblMaSP = new JLabel("Mã Sản Phẩm");
-		lblMaSP.setBounds(10, 215, 94, 29);
+		lblMaSP.setBounds(10, 198, 94, 29);
 		panel.add(lblMaSP);
 		lblMaSP.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		
 		txtMaSP = new JTextField();
-		txtMaSP.setBounds(114, 215, 186, 29);
+		txtMaSP.setBounds(114, 198, 186, 29);
 		panel.add(txtMaSP);
 		txtMaSP.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		txtMaSP.setColumns(10);
 		
 		JLabel lblTenSP = new JLabel("Tên Sản Phẩm");
-		lblTenSP.setBounds(10, 284, 94, 29);
+		lblTenSP.setBounds(10, 238, 94, 29);
 		panel.add(lblTenSP);
 		lblTenSP.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		
 		txtTenSP = new JTextField();
-		txtTenSP.setBounds(114, 284, 186, 29);
+		txtTenSP.setBounds(114, 238, 186, 29);
 		panel.add(txtTenSP);
 		txtTenSP.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		txtTenSP.setColumns(10);
 		
 		JLabel lblGiaSP = new JLabel("Giá Sản Phẩm");
-		lblGiaSP.setBounds(10, 349, 94, 29);
+		lblGiaSP.setBounds(10, 278, 94, 29);
 		panel.add(lblGiaSP);
 		lblGiaSP.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		
 		txtGiaSP = new JTextField();
-		txtGiaSP.setBounds(114, 349, 186, 29);
+		txtGiaSP.setBounds(114, 278, 186, 29);
 		panel.add(txtGiaSP);
 		txtGiaSP.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		txtGiaSP.setColumns(10);
 		
 		txtLoaiSP = new JTextField();
-		txtLoaiSP.setBounds(114, 421, 186, 29);
+		txtLoaiSP.setBounds(114, 318, 186, 29);
 		panel.add(txtLoaiSP);
 		txtLoaiSP.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		txtLoaiSP.setColumns(10);
 		
 		JLabel lblLoaiSP = new JLabel("Loại Sản Phẩm");
-		lblLoaiSP.setBounds(10, 421, 94, 29);
+		lblLoaiSP.setBounds(10, 318, 94, 29);
 		panel.add(lblLoaiSP);
 		lblLoaiSP.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		
@@ -123,6 +123,11 @@ public class FormQuanTriSanPham  extends JPanel {
 		panel_3.add(rdbtnNewRadioButton_1_1_1);
 		rdbtnNewRadioButton_1_1_1.setBackground(new Color(255, 255, 255));
 		rdbtnNewRadioButton_1_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		
+		JButton btnXacNhn = new JButton("Xác nhận");
+		btnXacNhn.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		btnXacNhn.setBounds(114, 358, 100, 29);
+		panel.add(btnXacNhn);
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(255, 255, 255));

@@ -153,6 +153,11 @@ public class FormQuanTriNhanVien extends JPanel {
 		rdbtnNewRadioButton_1_1_1.setBackground(new Color(255, 255, 255));
 		rdbtnNewRadioButton_1_1_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
 		
+		JButton btnXacNhn = new JButton("Xác nhận");
+		btnXacNhn.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		btnXacNhn.setBounds(114, 464, 100, 29);
+		panel.add(btnXacNhn);
+		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(255, 255, 255));
 		panel_2.setBounds(333, 63, 775, 606);

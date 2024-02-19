@@ -118,6 +118,11 @@ public class FormQuanTriTaiKhoan extends JPanel {
 		comboBox.setBounds(117, 167, 186, 29);
 		panel.add(comboBox);
 		
+		JButton btnXacNhn = new JButton("Xác nhận");
+		btnXacNhn.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		btnXacNhn.setBounds(117, 269, 100, 29);
+		panel.add(btnXacNhn);
+		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(255, 255, 255));
 		panel_2.setBounds(333, 63, 775, 606);
