@@ -11,7 +11,7 @@ public class FormQuanTriSanPham extends JPanel {
 	 * Create the panel.
 	 */
 	public FormQuanTriSanPham() {
-		setSize(1151, 700);
+		setSize(1120, 680);
 		
 		JLabel lblNewLabel = new JLabel("quan tri san pham");
 		add(lblNewLabel);

@@ -13,6 +13,8 @@ import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.JRadioButton;
+import java.awt.Component;
 
 public class FormTraCuuNhanVien extends JPanel {
 
@@ -26,7 +28,7 @@ public class FormTraCuuNhanVien extends JPanel {
 	 * Create the panel.
 	 */
 	public FormTraCuuNhanVien() {
-		setSize(1131, 700);
+		setSize(1120, 680);
 		setLayout(null);
 		
 		JLabel lblTraCuSn = new JLabel("TRA CỨU NHÂN VIÊN");
@@ -34,94 +36,113 @@ public class FormTraCuuNhanVien extends JPanel {
 		lblTraCuSn.setBounds(412, 11, 313, 55);
 		add(lblTraCuSn);
 		
-		JLabel lblNewLabel = new JLabel("Mã Nhân Viên");
-		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		lblNewLabel.setBounds(62, 368, 105, 38);
-		add(lblNewLabel);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(10, 63, 313, 606);
+		add(panel);
 		
-		JLabel lblTnSnPhm = new JLabel("Họ Và Tên");
-		lblTnSnPhm.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		lblTnSnPhm.setBounds(79, 417, 88, 38);
-		add(lblTnSnPhm);
+		JLabel lblNewLabel = new JLabel("Mã nhân viên");
+		lblNewLabel.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblNewLabel.setBounds(10, 198, 94, 29);
+		panel.add(lblNewLabel);
 		
 		textField = new JTextField();
-		textField.setFont(new Font("Arial", Font.PLAIN, 14));
-		textField.setBounds(177, 371, 214, 38);
-		add(textField);
+		textField.setEditable(false);
+		textField.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		textField.setColumns(10);
+		textField.setBounds(114, 198, 186, 29);
+		panel.add(textField);
+		
+		JLabel lblHoVaTn = new JLabel("Họ và tên");
+		lblHoVaTn.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblHoVaTn.setBounds(10, 238, 94, 29);
+		panel.add(lblHoVaTn);
 		
 		textField_1 = new JTextField();
-		textField_1.setFont(new Font("Arial", Font.PLAIN, 14));
+		textField_1.setEditable(false);
+		textField_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		textField_1.setColumns(10);
-		textField_1.setBounds(177, 420, 214, 38);
-		add(textField_1);
+		textField_1.setBounds(114, 238, 186, 29);
+		panel.add(textField_1);
 		
-		JLabel lblLoiSnPhm = new JLabel("Giới Tính");
-		lblLoiSnPhm.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		lblLoiSnPhm.setBounds(89, 466, 78, 38);
-		add(lblLoiSnPhm);
+		JLabel lblSinThoai = new JLabel("Số điện thoại");
+		lblSinThoai.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblSinThoai.setBounds(10, 278, 94, 29);
+		panel.add(lblSinThoai);
 		
-		JLabel lblLoiSnPhm_1 = new JLabel("Số Điện Thoại");
-		lblLoiSnPhm_1.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		lblLoiSnPhm_1.setBounds(55, 515, 112, 38);
-		add(lblLoiSnPhm_1);
+		textField_2 = new JTextField();
+		textField_2.setEditable(false);
+		textField_2.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		textField_2.setColumns(10);
+		textField_2.setBounds(114, 278, 186, 29);
+		panel.add(textField_2);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setEditable(true);
-		comboBox.setFont(new Font("Arial", Font.PLAIN, 14));
-		comboBox.setBounds(177, 469, 214, 38);
-		add(comboBox);
+		JLabel lblGiiTinh = new JLabel("Giới tính");
+		lblGiiTinh.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblGiiTinh.setBounds(10, 314, 94, 29);
+		panel.add(lblGiiTinh);
+		
+		JRadioButton rdbtnNewRadioButton = new JRadioButton("Nam");
+		rdbtnNewRadioButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		rdbtnNewRadioButton.setBackground(Color.WHITE);
+		rdbtnNewRadioButton.setBounds(114, 318, 109, 23);
+		panel.add(rdbtnNewRadioButton);
+		
+		JRadioButton rdbtnN = new JRadioButton("Nữ");
+		rdbtnN.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		rdbtnN.setBackground(Color.WHITE);
+		rdbtnN.setBounds(114, 354, 109, 23);
+		panel.add(rdbtnN);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setLayout(null);
+		panel_1.setBorder(new LineBorder(new Color(0, 0, 0)));
+		panel_1.setBounds(114, 11, 186, 176);
+		panel.add(panel_1);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setBounds(0, 0, 186, 176);
+		panel_1.add(lblNewLabel_1);
+		
+		JLabel lblAnhaiDin = new JLabel("Ảnh đại diện");
+		lblAnhaiDin.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblAnhaiDin.setBounds(10, 158, 94, 29);
+		panel.add(lblAnhaiDin);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setLayout(null);
+		panel_2.setBackground(Color.WHITE);
+		panel_2.setBounds(333, 63, 775, 606);
+		add(panel_2);
+		
+		JLabel lblDanhSachNhn = new JLabel("Danh sách nhân viên");
+		lblDanhSachNhn.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
+		lblDanhSachNhn.setBounds(10, 0, 168, 30);
+		panel_2.add(lblDanhSachNhn);
 		
 		table = new JTable();
 		table.setRowHeight(25);
-		table.getTableHeader().setFont(new Font("Arial", Font.PLAIN, 14));
-		table.setFont(new Font("Arial", Font.PLAIN, 14));
+		table.getTableHeader().setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
+		table.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
 		table.setForeground(new Color(0, 0, 0));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null},
+				{null, null, null, null, null, null, null},
 			},
 			new String[] {
-				"ID Nhân Viên", "Họ Và Tên", "Giới Tính", "Số Điện Thoại"
+				"Mã nhân viên", "Họ và tên", "Số điện thoại", "Giới tính", "Ảnh đại diện"
 			}
 		));
 		
 		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(412, 79, 709, 593);
-		add(scrollPane);
+		scrollPane.setBounds(10, 41, 755, 554);
+		panel_2.add(scrollPane);
 		
-		
-		JLabel lblThngTinSn = new JLabel("Thông Tin Nhân Viên");
-		lblThngTinSn.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
-		lblThngTinSn.setBounds(97, 79, 215, 38);
-		add(lblThngTinSn);
-		
-		JButton btnTmKim = new JButton("Tìm kiếm");
-		btnTmKim.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		btnTmKim.setBackground(Color.WHITE);
-		btnTmKim.setBounds(177, 564, 135, 44);
-		add(btnTmKim);
-		
-		JLabel lblnh = new JLabel("Ảnh");
-		lblnh.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		lblnh.setBounds(126, 326, 41, 30);
-		add(lblnh);
-		
-		JPanel panel = new JPanel();
-		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
-		panel.setBounds(177, 128, 214, 227);
-		add(panel);
-		panel.setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setBounds(0, 2, 214, 227);
-		panel.add(lblNewLabel_1);
-		
-		textField_2 = new JTextField();
-		textField_2.setFont(new Font("Arial", Font.PLAIN, 14));
-		textField_2.setColumns(10);
-		textField_2.setBounds(177, 515, 214, 38);
-		add(textField_2);
+		JButton btnNewButton = new JButton("Tìm kiếm");
+		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		btnNewButton.setBounds(676, 6, 89, 23);
+		panel_2.add(btnNewButton);
 		
 	}
 }

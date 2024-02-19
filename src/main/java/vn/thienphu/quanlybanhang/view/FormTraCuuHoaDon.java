@@ -19,85 +19,125 @@ import javax.swing.table.DefaultTableModel;
 import vn.thienphu.quanlybanhang.controller.MouseControllerFormIndex;
 import vn.thienphu.quanlybanhang.controller.MouseControllerFormTraCuuHoaDon;
 import com.toedter.calendar.JDateChooser;
+import javax.swing.JRadioButton;
+import java.awt.Component;
 
 public class FormTraCuuHoaDon extends JPanel {
 
 	private static final long serialVersionUID = 1L;
-	private JTextField textField;
-	private JTable table;
 	private MouseControllerFormTraCuuHoaDon mouseControllerFormTraCuuHoaDon = new MouseControllerFormTraCuuHoaDon(this);
 	private JPopupMenu popupMenu;
+	private JTextField textField;
+	private JTextField textField_1;
+	private JTextField textField_3;
+	private JTable table;
 
 	/**
 	 * Create the panel.
 	 */
 	public FormTraCuuHoaDon() {
-		setSize(1131, 700);
+		setSize(1120, 680);
 		setLayout(null);
 
 		JLabel lblTraCuSn = new JLabel("TRA CỨU HÓA ĐƠN");
 		lblTraCuSn.setFont(new Font("Segoe UI Black", Font.PLAIN, 28));
 		lblTraCuSn.setBounds(412, 11, 291, 55);
 		add(lblTraCuSn);
-
-		JLabel lblNewLabel = new JLabel("Mã Hóa Đơn");
-		lblNewLabel.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		lblNewLabel.setBounds(51, 129, 105, 38);
-		add(lblNewLabel);
-
-		textField = new JTextField();
-		textField.setFont(new Font("Arial", Font.PLAIN, 14));
-		textField.setBounds(166, 131, 214, 38);
-		add(textField);
-		textField.setColumns(10);
-
-		JLabel lblLoiSnPhm = new JLabel("Đến Ngày");
-		lblLoiSnPhm.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		lblLoiSnPhm.setBounds(73, 226, 83, 38);
-		add(lblLoiSnPhm);
 		
 		popupMenu = new JPopupMenu();
         JMenuItem menuItem = new JMenuItem("Chi Tiết Hóa Đơn");
         popupMenu.add(menuItem);
-
-		table = new JTable();
-		table.setRowHeight(25);
-		table.getTableHeader().setFont(new Font("Arial", Font.PLAIN, 14));
-		table.setFont(new Font("Arial", Font.PLAIN, 14));
-		table.setForeground(new Color(0, 0, 0));
-		table.setModel(new DefaultTableModel(new Object[][] { { null, null, null, null }, },
-				new String[] { "Mã Hóa Đơn", "ID Nhân Viên", "Ngày Lập", "Tổng Tiền" }));
-		table.addMouseListener(mouseControllerFormTraCuuHoaDon);
-
-		JScrollPane scrollPane = new JScrollPane(table);
-		scrollPane.setBounds(412, 79, 709, 593);
-		add(scrollPane);
-
-		JLabel lblThngTinSn = new JLabel("Thông Tin Hóa Đơn");
-		lblThngTinSn.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
-		lblThngTinSn.setBounds(97, 79, 206, 38);
-		add(lblThngTinSn);
-
-		JButton btnTmKim = new JButton("Tìm kiếm");
-		btnTmKim.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		btnTmKim.setBackground(Color.WHITE);
-		btnTmKim.setBounds(166, 275, 135, 44);
-		add(btnTmKim);
 		
-		JLabel lblTNgy = new JLabel("Từ Ngày");
-		lblTNgy.setFont(new Font("Segoe UI Black", Font.PLAIN, 14));
-		lblTNgy.setBounds(80, 177, 76, 38);
-		add(lblTNgy);
+		JPanel panel = new JPanel();
+		panel.setLayout(null);
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(10, 66, 313, 606);
+		add(panel);
+		
+		JLabel lblMaHoan = new JLabel("Mã hóa đơn");
+		lblMaHoan.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblMaHoan.setBounds(13, 82, 94, 29);
+		panel.add(lblMaHoan);
+		
+		textField = new JTextField();
+		textField.setEditable(false);
+		textField.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		textField.setColumns(10);
+		textField.setBounds(117, 82, 186, 29);
+		panel.add(textField);
+		
+		JLabel lblMaNhnVin = new JLabel("Mã nhân viên");
+		lblMaNhnVin.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblMaNhnVin.setBounds(13, 122, 94, 29);
+		panel.add(lblMaNhnVin);
+		
+		textField_1 = new JTextField();
+		textField_1.setEditable(false);
+		textField_1.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		textField_1.setColumns(10);
+		textField_1.setBounds(117, 122, 186, 29);
+		panel.add(textField_1);
+		
+		JLabel lblNgayLp = new JLabel("Ngày lập");
+		lblNgayLp.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblNgayLp.setBounds(13, 162, 94, 29);
+		panel.add(lblNgayLp);
+		
+		textField_3 = new JTextField();
+		textField_3.setEditable(false);
+		textField_3.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		textField_3.setColumns(10);
+		textField_3.setBounds(117, 202, 186, 29);
+		panel.add(textField_3);
+		
+		JLabel lblTngTin = new JLabel("Tổng tiền");
+		lblTngTin.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 13));
+		lblTngTin.setBounds(13, 202, 94, 29);
+		panel.add(lblTngTin);
+		
+		JLabel lblThngTinHoa = new JLabel("Thông Tin Hóa Đơn");
+		lblThngTinHoa.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 20));
+		lblThngTinHoa.setBounds(54, 24, 201, 30);
+		panel.add(lblThngTinHoa);
 		
 		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setDateFormatString("dd/mm/yyyy");
-		dateChooser.setBounds(166, 180, 214, 38);
-		add(dateChooser);
+		dateChooser.setDateFormatString("dd/MM/yyyy");
+		dateChooser.setBounds(117, 162, 186, 29);
+		panel.add(dateChooser);
 		
-		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setDateFormatString("dd/mm/yyyy");
-		dateChooser_1.setBounds(166, 226, 214, 38);
-		add(dateChooser_1);
+		JPanel panel_2 = new JPanel();
+		panel_2.setLayout(null);
+		panel_2.setBackground(Color.WHITE);
+		panel_2.setBounds(335, 66, 775, 606);
+		add(panel_2);
+		
+		JLabel lblDanhSachHoa = new JLabel("Danh sách hóa đơn");
+		lblDanhSachHoa.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 14));
+		lblDanhSachHoa.setBounds(10, 0, 168, 30);
+		panel_2.add(lblDanhSachHoa);
+		
+		table = new JTable();
+		table.setRowHeight(25);
+		table.getTableHeader().setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
+		table.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
+		table.setForeground(new Color(0, 0, 0));
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null, null},
+			},
+			new String[] {
+				"Mã hóa đơn", "Mã nhân viên", "Ngày lập", "Tổng tiền"
+			}
+		));
+		table.addMouseListener(mouseControllerFormTraCuuHoaDon);
+		JScrollPane scrollPane = new JScrollPane(table);
+		scrollPane.setBounds(10, 41, 755, 554);
+		panel_2.add(scrollPane);
+		
+		JButton btnNewButton = new JButton("Tìm kiếm");
+		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
+		btnNewButton.setBounds(676, 6, 89, 23);
+		panel_2.add(btnNewButton);
 	}
 	
 	public void showPopupMenu(MouseEvent e) {

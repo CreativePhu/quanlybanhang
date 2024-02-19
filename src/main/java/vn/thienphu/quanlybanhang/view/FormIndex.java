@@ -119,8 +119,8 @@ public class FormIndex extends JFrame {
 
 		lblMenuTrangChu = new JLabel("Trang Chủ");
 		lblMenuTrangChu.setForeground(new Color(255, 255, 255));
-		lblMenuTrangChu.setFont(new Font("Segoe UI Black", Font.PLAIN, 22));
-		lblMenuTrangChu.setBounds(71, 11, 133, 30);
+		lblMenuTrangChu.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
+		lblMenuTrangChu.setBounds(78, 11, 114, 30);
 		panel_btnTrangChu.add(lblMenuTrangChu);
 
 		panel_btn_traCuuThongTin = new JPanel();
@@ -130,8 +130,8 @@ public class FormIndex extends JFrame {
 		menu.add(panel_btn_traCuuThongTin);
 
 		lblMenuTraCuuThongTin = new JLabel("Tra Cứu Thông Tin");
-		lblMenuTraCuuThongTin.setFont(new Font("Segoe UI Black", Font.PLAIN, 22));
-		lblMenuTraCuuThongTin.setBounds(29, 11, 211, 30);
+		lblMenuTraCuuThongTin.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
+		lblMenuTraCuuThongTin.setBounds(34, 11, 203, 30);
 		panel_btn_traCuuThongTin.add(lblMenuTraCuuThongTin);
 
 		panel_btnQuanTri = new JPanel();
@@ -141,8 +141,8 @@ public class FormIndex extends JFrame {
 		menu.add(panel_btnQuanTri);
 
 		lblMenuQuanTri = new JLabel("Quản Trị");
-		lblMenuQuanTri.setFont(new Font("Segoe UI Black", Font.PLAIN, 22));
-		lblMenuQuanTri.setBounds(83, 11, 106, 30);
+		lblMenuQuanTri.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
+		lblMenuQuanTri.setBounds(86, 11, 99, 30);
 		panel_btnQuanTri.add(lblMenuQuanTri);
 
 		panel_btnThanhToanHoaDon = new JPanel();
@@ -152,8 +152,8 @@ public class FormIndex extends JFrame {
 		menu.add(panel_btnThanhToanHoaDon);
 
 		lblMenuThanhToanHoaDon = new JLabel("Thanh Toán Hóa Đơn");
-		lblMenuThanhToanHoaDon.setFont(new Font("Segoe UI Black", Font.PLAIN, 22));
-		lblMenuThanhToanHoaDon.setBounds(16, 11, 241, 30);
+		lblMenuThanhToanHoaDon.setFont(new Font("Segoe UI Black", Font.PLAIN, 20));
+		lblMenuThanhToanHoaDon.setBounds(22, 11, 226, 30);
 		panel_btnThanhToanHoaDon.add(lblMenuThanhToanHoaDon);
 
 		JLabel lblNewLabel_3 = new JLabel("");
