@@ -83,8 +83,8 @@ public class FormThanhToan extends JPanel {
         table = new JTable(model);
         panelTable.add(new JScrollPane(table));
         table.setRowHeight(25);
-		table.getTableHeader().setFont(new Font("Arial", Font.PLAIN, 14));
-		table.setFont(new Font("Arial", Font.PLAIN, 14));
+		table.getTableHeader().setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
+		table.setFont(new Font("Segoe UI Semilight", Font.PLAIN, 13));
 		table.setForeground(new Color(0, 0, 0));
 
         // Set column headers
