@@ -1,19 +1,23 @@
 package vn.thienphu.quanlybanhang.model;
 
-import java.util.ArrayList;
 import java.util.List;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
-
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "nhan_vien")
 public class NhanVien {
@@ -50,9 +54,6 @@ public class NhanVien {
 			CascadeType.REFRESH })
 	private List<HoaDon> danhSachHoaDon;
 
-	public NhanVien() {
-
-	}
 
 	public NhanVien(String tenNhanVien, String soDienThoai, String gmail) {
 		this.tenNhanVien = tenNhanVien;
@@ -60,83 +61,5 @@ public class NhanVien {
 		this.gmail = gmail;
 	}
 
-	public long getIdNhanVien() {
-		return idNhanVien;
-	}
-
-	public void setIdNhanVien(long idNhanVien) {
-		this.idNhanVien = idNhanVien;
-	}
-
-	public String getTenNhanVien() {
-		return tenNhanVien;
-	}
-
-	public void setTenNhanVien(String tenNhanVien) {
-		this.tenNhanVien = tenNhanVien;
-	}
-
-	public String getSoDienThoai() {
-		return soDienThoai;
-	}
-
-	public void setSoDienThoai(String soDienThoai) {
-		this.soDienThoai = soDienThoai;
-	}
-
-	public String getGmail() {
-		return gmail;
-	}
-
-	public void setGmail(String gmail) {
-		this.gmail = gmail;
-	}
-
-	public String getDiaChi() {
-		return diaChi;
-	}
-
-	public void setDiaChi(String diaChi) {
-		this.diaChi = diaChi;
-	}
-
-	public boolean isGioiTinh() {
-		return gioiTinh;
-	}
-
-	public void setGioiTinh(boolean gioiTinh) {
-		this.gioiTinh = gioiTinh;
-	}
-
-	public TaiKhoan getTaiKhoan() {
-		return taiKhoan;
-	}
-
-	public void setTaiKhoan(TaiKhoan taiKhoan) {
-		this.taiKhoan = taiKhoan;
-	}
-
-	public Anh getAnh() {
-		return anh;
-	}
-
-	public void setAnh(Anh anh) {
-		this.anh = anh;
-	}
-
-
-	public List<HoaDon> getDanhSachHoaDon() {
-		return danhSachHoaDon;
-	}
-
-	public void setDanhSachHoaDon(List<HoaDon> danhSachHoaDon) {
-		this.danhSachHoaDon = danhSachHoaDon;
-	}
-
-	@Override
-	public String toString() {
-		return "NhanVien [idNhanVien=" + idNhanVien + ", tenNhanVien=" + tenNhanVien + ", soDienThoai=" + soDienThoai
-				+ ", gmail=" + gmail + ", taiKhoan=" + taiKhoan + "]";
-	}
 
 }

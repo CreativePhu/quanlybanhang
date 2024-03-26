@@ -1,15 +1,21 @@
 package vn.thienphu.quanlybanhang.model;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "chi_tiet_hoa_don")
 public class ChiTietHoaDon {
@@ -29,55 +35,5 @@ public class ChiTietHoaDon {
 	@ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
 	@JoinColumn(name = "id_san_pham")
 	private SanPham sanPham;
-
-	public ChiTietHoaDon() {
-		
-	}
-
-	public ChiTietHoaDon(long idChiTietHoaDon, int soLuong, HoaDon hoaDon, SanPham sanPham) {
-		this.idChiTietHoaDon = idChiTietHoaDon;
-		this.soLuong = soLuong;
-		this.hoaDon = hoaDon;
-		this.sanPham = sanPham;
-	}
-
-	public long getIdChiTietHoaDon() {
-		return idChiTietHoaDon;
-	}
-
-	public void setIdChiTietHoaDon(long idChiTietHoaDon) {
-		this.idChiTietHoaDon = idChiTietHoaDon;
-	}
-
-	public int getSoLuong() {
-		return soLuong;
-	}
-
-	public void setSoLuong(int soLuong) {
-		this.soLuong = soLuong;
-	}
-
-	public HoaDon getHoaDon() {
-		return hoaDon;
-	}
-
-	public void setHoaDon(HoaDon hoaDon) {
-		this.hoaDon = hoaDon;
-	}
-
-	public SanPham getSanPham() {
-		return sanPham;
-	}
-
-	public void setSanPham(SanPham sanPham) {
-		this.sanPham = sanPham;
-	}
-
-	@Override
-	public String toString() {
-		return "ChiTietHoaDon [idChiTietHoaDon=" + idChiTietHoaDon + ", soLuong=" + soLuong + ", hoaDon=" + hoaDon
-				+ ", sanPham=" + sanPham + "]";
-	}
-
 	
 }

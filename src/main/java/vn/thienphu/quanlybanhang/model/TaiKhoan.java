@@ -2,18 +2,25 @@ package vn.thienphu.quanlybanhang.model;
 
 import java.util.ArrayList;
 import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
-import javax.persistence.Table;
 
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.JoinColumn;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "tai_khoan")
 public class TaiKhoan {
@@ -36,46 +43,11 @@ public class TaiKhoan {
 	@OneToOne(mappedBy = "taiKhoan", cascade = CascadeType.ALL)
 	private NhanVien nhanVien;
 
-	public TaiKhoan() {
-
-	}
-
 	public TaiKhoan(String matKhau, boolean trangThai) {
 		this.matKhau = matKhau;
 		this.trangThai = trangThai;
 	}
 
-	public long getTenTaiKhoan() {
-		return tenTaiKhoan;
-	}
-
-	public void setTenTaiKhoan(long tenTaiKhoan) {
-		this.tenTaiKhoan = tenTaiKhoan;
-	}
-
-	public String getMatKhau() {
-		return matKhau;
-	}
-
-	public void setMatKhau(String matKhau) {
-		this.matKhau = matKhau;
-	}
-
-	public boolean isTrangThai() {
-		return trangThai;
-	}
-
-	public void setTrangThai(boolean trangThai) {
-		this.trangThai = trangThai;
-	}
-
-	public List<Quyen> getDanhSachQuyen() {
-		return danhSachQuyen;
-	}
-
-	public void setDanhSachQuyen(List<Quyen> danhSachQuyen) {
-		this.danhSachQuyen = danhSachQuyen;
-	}
 	
 	public void themQuyen(Quyen quyen) {
 		if(danhSachQuyen == null) {
@@ -83,21 +55,4 @@ public class TaiKhoan {
 		}
 		danhSachQuyen.add(quyen);
 	}
-
-	public NhanVien getNhanVien() {
-		return nhanVien;
-	}
-
-	public void setNhanVien(NhanVien nhanVien) {
-		this.nhanVien = nhanVien;
-	}
-
-	@Override
-	public String toString() {
-		return "TaiKhoan [tenTaiKhoan=" + tenTaiKhoan + ", matKhau=" + matKhau + ", trangThai=" + trangThai
-				+ ", danhSachQuyen=" + danhSachQuyen + "]";
-	}
-
-	
-
 }

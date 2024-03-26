@@ -9,6 +9,8 @@ import java.util.Base64;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
 import vn.thienphu.quanlybanhang.model.Anh;
 import vn.thienphu.quanlybanhang.model.LoaiSanPham;
 import vn.thienphu.quanlybanhang.model.NhanVien;
@@ -19,7 +21,7 @@ import vn.thienphu.quanlybanhang.util.HibernateUtil;
 
 public class Run {
 	public static void main(String[] args) {
-		
+		EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("JPA_ORM_QLBanHang");
 //		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 //		Session session = sessionFactory.openSession();
 //		session.beginTransaction();
@@ -32,9 +34,9 @@ public class Run {
 //		session.getTransaction().commit();
 //		session.close();
 		
-		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
-		Session session = sessionFactory.openSession();
-		session.beginTransaction();
+//		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+//		Session session = sessionFactory.openSession();
+//		session.beginTransaction();
 //		LoaiSanPham loaiSanPham = new LoaiSanPham("Bàn ghế");
 //		SanPham sanPham = new SanPham("Bàn gỗ", 120000);
 //		sanPham.addLoaiSanPham(loaiSanPham);
@@ -42,8 +44,8 @@ public class Run {
 //		Anh anh = new Anh(image);
 //		sanPham.setAnh(anh);
 //		session.persist(sanPham);
-		session.getTransaction().commit();
-		session.close();
+//		session.getTransaction().commit();
+//		session.close();
 	}
 	
 	public static String convertImageToBase64(String imagePath) {

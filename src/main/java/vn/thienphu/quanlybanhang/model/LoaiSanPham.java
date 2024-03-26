@@ -2,17 +2,23 @@ package vn.thienphu.quanlybanhang.model;
 
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.Table;
+import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
+import jakarta.persistence.ManyToMany;
+import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "loai_san_pham")
 public class LoaiSanPham {
@@ -30,33 +36,4 @@ public class LoaiSanPham {
 			inverseJoinColumns = @JoinColumn(name = "id_san_pham")
 	)
 	private List<SanPham> danhSachSanPham;
-	public LoaiSanPham() {
-		
-	}
-	public LoaiSanPham(String tenLoai) {
-		this.tenLoai = tenLoai;
-	}
-	public long getMaLoai() {
-		return maLoai;
-	}
-	public void setMaLoai(long maLoai) {
-		this.maLoai = maLoai;
-	}
-	public String getTenLoai() {
-		return tenLoai;
-	}
-	public void setTenLoai(String tenLoai) {
-		this.tenLoai = tenLoai;
-	}
-	public List<SanPham> getDanhSachSanPham() {
-		return danhSachSanPham;
-	}
-	public void setDanhSachSanPham(List<SanPham> danhSachSanPham) {
-		this.danhSachSanPham = danhSachSanPham;
-	}
-	@Override
-	public String toString() {
-		return "LoaiSanPham [maLoai=" + maLoai + ", tenLoai=" + tenLoai + "]";
-	}
-	
 }
