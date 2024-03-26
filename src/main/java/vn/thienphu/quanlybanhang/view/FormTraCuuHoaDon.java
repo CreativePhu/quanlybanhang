@@ -3,6 +3,8 @@ package vn.thienphu.quanlybanhang.view;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -18,9 +20,14 @@ import javax.swing.table.DefaultTableModel;
 
 import vn.thienphu.quanlybanhang.controller.MouseControllerFormIndex;
 import vn.thienphu.quanlybanhang.controller.MouseControllerFormTraCuuHoaDon;
+import vn.thienphu.quanlybanhang.model.HoaDon;
+import vn.thienphu.quanlybanhang.thread.ThreadTimKiemHoaDon;
+
 import com.toedter.calendar.JDateChooser;
 import javax.swing.JRadioButton;
 import java.awt.Component;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class FormTraCuuHoaDon extends JPanel {
 
@@ -135,6 +142,14 @@ public class FormTraCuuHoaDon extends JPanel {
 		panel_2.add(scrollPane);
 		
 		JButton btnNewButton = new JButton("Tìm kiếm");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				List<HoaDon> danhSachHoaDon = new ArrayList<HoaDon>();
+				Runnable runnable = new ThreadTimKiemHoaDon(danhSachHoaDon);
+				Thread thread = new Thread(runnable);
+				thread.run();
+			}
+		});
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		btnNewButton.setBounds(676, 6, 89, 23);
 		panel_2.add(btnNewButton);

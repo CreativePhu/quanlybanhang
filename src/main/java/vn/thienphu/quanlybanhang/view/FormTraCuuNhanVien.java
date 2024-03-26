@@ -13,8 +13,17 @@ import javax.swing.JButton;
 import javax.swing.border.LineBorder;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+
+import vn.thienphu.quanlybanhang.item.FormTimKiemNhanVien;
+import vn.thienphu.quanlybanhang.model.NhanVien;
+import vn.thienphu.quanlybanhang.thread.ThreadTimKiemNhanVien;
+
 import javax.swing.JRadioButton;
 import java.awt.Component;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
+import java.awt.event.ActionEvent;
 
 public class FormTraCuuNhanVien extends JPanel {
 
@@ -140,6 +149,14 @@ public class FormTraCuuNhanVien extends JPanel {
 		panel_2.add(scrollPane);
 		
 		JButton btnNewButton = new JButton("Tìm kiếm");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				List<NhanVien> danhSachNhanVien = new ArrayList<NhanVien>();
+				Runnable runnable = new ThreadTimKiemNhanVien(danhSachNhanVien);
+				Thread thread = new Thread(runnable);
+				thread.run();
+			}
+		});
 		btnNewButton.setFont(new Font("Segoe UI Semibold", Font.PLAIN, 12));
 		btnNewButton.setBounds(676, 6, 89, 23);
 		panel_2.add(btnNewButton);
